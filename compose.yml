@@ -1,0 +1,21 @@
+# This file is used to define the services that will be used in the docker-compose command
+# Version 3.8 is used to define the version of the compose file
+version: "3.8"
+
+# Services are defined here
+# Service is a container that will be created by the `docker compose` command
+services:
+  docker-basics-example-project:
+    # The image that will be used to create the container
+    build:
+      # The context is the path where the Dockerfile is located
+      context: .
+      # The dockerfile is the name of the Dockerfile that will be used to create the container
+      dockerfile: Dockerfile
+    # The name of the image that will be created
+    image: docker-basics-example-project
+    # The name of the container
+    container_name: docker-basics-example-project
+    # The ports that will be exposed by the container
+    ports:
+      - "3000:3000"
